@@ -1,0 +1,15 @@
+<div>
+    <div class="topMenu"
+         ng-style="{ 'background-color': $ctrl.mode ? 'wheat' : 'black', 'color': $ctrl.mode ? 'black' : 'white'}">
+        Now playing: {{$ctrl.nowPlaying}}
+        <div ng-if="$ctrl.status"> with status {{$ctrl.status}}</div>
+    </div>
+    <div class="fas fa-adjust modeSwitcher" ng-click="$ctrl.switchMode()"
+         ng-style="{ 'background-color': $ctrl.mode ? 'black' : 'gray', 'color': $ctrl.mode ? 'white' : 'white'}">
+    </div>
+    <div class="content"  ng-style="{ 'background-color': $ctrl.mode ? 'white' : 'gray', 'color': $ctrl.mode ? 'white' : 'white'}">
+        <div class="musicBox" ng-repeat="item in $ctrl.files" ng-click="$ctrl.play(item.id)">
+            <span class="title">{{item.name}}</span>
+        </div>
+    </div>
+</div>
